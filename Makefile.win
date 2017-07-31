@@ -1,0 +1,70 @@
+# Project: Project1
+# Makefile created by Dev-C++ 5.8.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = main.o Point2D.o Tile.o EasyTile.o MediumTile.o WaterTile.o CropTile.o Competitor.o Rabbit.o Turtle.o Frog.o FileParser.o EndTile.o RaceTrack.o Vector.o
+LINKOBJ  = main.o Point2D.o Tile.o EasyTile.o MediumTile.o WaterTile.o CropTile.o Competitor.o Rabbit.o Turtle.o Frog.o FileParser.o EndTile.o RaceTrack.o Vector.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.8.1/include/c++"
+BIN      = Project.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Point2D.o: Point2D.cpp
+	$(CPP) -c Point2D.cpp -o Point2D.o $(CXXFLAGS)
+
+Tile.o: Tile.cpp
+	$(CPP) -c Tile.cpp -o Tile.o $(CXXFLAGS)
+
+EasyTile.o: EasyTile.cpp
+	$(CPP) -c EasyTile.cpp -o EasyTile.o $(CXXFLAGS)
+
+MediumTile.o: MediumTile.cpp
+	$(CPP) -c MediumTile.cpp -o MediumTile.o $(CXXFLAGS)
+
+WaterTile.o: WaterTile.cpp
+	$(CPP) -c WaterTile.cpp -o WaterTile.o $(CXXFLAGS)
+
+CropTile.o: CropTile.cpp
+	$(CPP) -c CropTile.cpp -o CropTile.o $(CXXFLAGS)
+
+Competitor.o: Competitor.cpp
+	$(CPP) -c Competitor.cpp -o Competitor.o $(CXXFLAGS)
+
+Rabbit.o: Rabbit.cpp
+	$(CPP) -c Rabbit.cpp -o Rabbit.o $(CXXFLAGS)
+
+Turtle.o: Turtle.cpp
+	$(CPP) -c Turtle.cpp -o Turtle.o $(CXXFLAGS)
+
+Frog.o: Frog.cpp
+	$(CPP) -c Frog.cpp -o Frog.o $(CXXFLAGS)
+
+FileParser.o: FileParser.cpp
+	$(CPP) -c FileParser.cpp -o FileParser.o $(CXXFLAGS)
+
+EndTile.o: EndTile.cpp
+	$(CPP) -c EndTile.cpp -o EndTile.o $(CXXFLAGS)
+
+RaceTrack.o: RaceTrack.cpp
+	$(CPP) -c RaceTrack.cpp -o RaceTrack.o $(CXXFLAGS)
+
+Vector.o: Vector.cpp
+	$(CPP) -c Vector.cpp -o Vector.o $(CXXFLAGS)
